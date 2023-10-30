@@ -2,9 +2,13 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Summary Changes 
 
-Let's discover **Docusaurus in less than 5 minutes**.
+The **OASIS** project had as its starting point the privateGPT code, which underwent significant modifications to build the desired AI. These modifications involved creating a highly specialized PDF reader and converter tailored to our needs, as well as developing EndPoints using the code base, integrating it with the database and PDF reading system.
+
+Furthermore, we implemented containerization of the application in Docker, aiming to improve the performance of artificial intelligence, in addition to establishing efficient control of errors and bugs to ensure the proper functioning of the system.
+
+
 
 ## Getting Started
 
