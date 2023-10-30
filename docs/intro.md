@@ -8,44 +8,17 @@ The **OASIS** project had as its starting point the privateGPT code, which under
 
 Furthermore, we implemented containerization of the application in Docker, aiming to improve the performance of artificial intelligence, in addition to establishing efficient control of errors and bugs to ensure the proper functioning of the system.
 
+For data management, we chose to use ChromaDB for intelligence operation, leveraging its advanced capabilities. In addition, we chose MySQL for the organization and external distribution of the application, ensuring efficiency in data management.
 
+The interface between the backend and the frontend is provided through an API, FastAPI being our choice due to its remarkable performance, efficiency and a simple syntax that simplifies development and maintenance.
+
+As far as frontend is concerned, we decided to adopt the Next.js language. This choice was motivated by its growing market adoption, the inclusion of features such as Server-Side Rendering (SSR) and the excellent performance it offers. In addition, Next.js provides a user-friendly development experience, is fully open source, and has a large community of users, making it a valuable source of content and support on the internet.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+To start running the project or create if you want we will leave the basic links for you:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+**(https://github.com/imartinez/privateGPT)**
+**(https://nextjs.org/)**
+**(https://www.trychroma.com/)**
+**(https://fastapi.tiangolo.com/)**
