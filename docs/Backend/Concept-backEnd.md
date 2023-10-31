@@ -2,22 +2,22 @@
 sidebar_position: 6
 ---
 
-# What is had backEnd!
+# Tutorial FastAPI
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+Dentro do projeto você colocara os comandos do framework do FastAPI:
 
-Docusaurus has **much more to offer**!
+pip install fastapi
+pip install "uvicorn[standard]"
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+Para rodar o uvicorn você pode inserir o comando que faz com que inicie o projeto ou você pode formatar para que assim que você click em start ele iniciar:
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+Comando de inicialização:
+uvicorn main:app --reload
 
-## What's next?
+Para rodar esse comando você tera que no final da sua aplicação/ arquivo especificar o caminho:
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+if __name__ == '__main__':
+    import uvicorn
+    
+    uvicorn.run("application:app", host='127.0.0.1', port=5000, reload=True)
+
