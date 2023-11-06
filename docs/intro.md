@@ -19,6 +19,9 @@ As far as frontend is concerned, we decided to adopt the Next.js language. This 
 To start running the project or create if you want we will leave the basic links for you:
 
 **(https://github.com/imartinez/privateGPT)**
+
 **(https://nextjs.org/)**
+
 **(https://www.trychroma.com/)**
+
 **(https://fastapi.tiangolo.com/)**
