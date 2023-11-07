@@ -1,13 +1,22 @@
 # SQL Configuration
 
 
-
-
-# Configuração do banco de dados SQLServer/ MySQL
-Crie um arquivo models.py e dentro dele instancie as tabelas e o que deseja colocar nelas
+# Configuration of SQLServer/ MySQL database
+Create a models.py file and inside it instantiate the tables and what you want to put in them
 
 ~~~
-#--- Configuração da tabela ---
+#--- Table configuration ---
+
+from typing import List, Optional
+from pydantic import BaseModel, validator
+from modelsdb import Optional
+import os
+from typing import Optional, List
+from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String, Boolean, VARCHAR
+from database import Base, SessionLocal
+
+
 
 class User (Base):
     __tablename__ = "users"
@@ -36,13 +45,29 @@ def get_db():
     finally:
         db.close()
 
-Base.metadata.create_all(bind=engine)
 ~~~
 
 <br />
 
 ~~~
-#--- Retorna os dados que possui dentro do banco de dados ---
+#--- Returns the data you have inside the database ---
+import datetime
+import shutil
+from fastapi import FastAPI, File, HTTPException, UploadFile, status, Response, Path, Query, Header, Depends
+from modelsdb import Optional, Question, PathFiles, DocumentList, User, UserSchema, get_db
+import concurrent.futures
+import json
+import time
+import os
+from typing import Optional, List
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
+from sqlalchemy import Column, Integer, String, Boolean, VARCHAR
+from database import Base, engine, SessionLocal
+import database
+
+
+Base.metadata.create_all(bind=engine)
 
 @app.get("/user", response_model=List[UserSchema])
 async def index(db:Session=Depends(get_db)):
@@ -50,7 +75,7 @@ async def index(db:Session=Depends(get_db)):
 ~~~
 
 ~~~
-#--- Cria uma tabela ---
+#--- create a table ---
 
 @app.get("/userc")
 async def criarUsuario(db:Session=Depends(get_db)):

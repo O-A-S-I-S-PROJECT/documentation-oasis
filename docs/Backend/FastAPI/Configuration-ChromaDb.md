@@ -1,22 +1,19 @@
 # ChromaDB Configuration
 
 
-
-
-# Configuração do chromaDB
-O chromaDB é o banco de dados da inteligência artificial e o seu funcionamento se desenvolve por meio dele, portanto para a integração da api com o banco de dados da IA, colocamos a configuração no arquivo application.py antes de começar a aplicação de fato:
+# ChromaDB Configuration
+chromaDB is the artificial intelligence database and its operation is developed through it, so for the integration of the api with the AI database, we put the configuration in the application.py file before starting the actual application:
 
 ~~~
-#--- Configuração de inicialização do chromaDB ---
-
-# Uma forma de como rodar puxando as consfigurações do dotenv
+#--- Setting up the chromaDB startup ---
+# A way to rotate by pulling the consfigurations of dotenv
 
 load_dotenv()
 global source_directory, persist_directory, chroma_settings
 ~~~
 
 ~~~
-#--- Essa é a configuração do chromaDB faz com que possa modificar alguns dados e que possa usa-lo ---
+#--- This is the configuration of chromaDB makes it possible to modify some data and to use it ---
 
 def change_group(group_name):
     global source_directory, persist_directory, chroma_settings
