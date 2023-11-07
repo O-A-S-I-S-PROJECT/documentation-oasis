@@ -55,6 +55,6 @@ def read_item(item_id: int, q: Union[str, None] = None):
 *Attention: If you are an apprentice who has a lesson with the python instructor will already know all these steps in different ways than this project, so nothing prevents you from doing the way you **know** with modifications and adaptations.
 
 
-Para mais tutoriais ou entendimento do FastAPI acesse o site:
+For more Tutorials or understanding of FastAPI visit the website:
 
 **(https://fastapi.tiangolo.com/)**
