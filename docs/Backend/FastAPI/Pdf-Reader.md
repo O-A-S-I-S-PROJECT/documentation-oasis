@@ -1,6 +1,5 @@
-
-Para a leitura de documentos construimos um leitor de pdf que atende ao que se espera que o usuário faça e a sua demanda, com isso o trecho de código a seguir trata de se do envio do arquivo para a API para que nela aconteça a leitura e a converção de pdf para txt. 
-A conversão de pdf para txt acontece para que a ia consiga ler melhor e mais eficientemente o conteudo do arquivo enviado, assim retornando para você o conteudo.
+For the reading of documents we build a pdf reader that meets what the user is expected to do and their demand, with this the following code snippet is about sending the file to the API to make it read and converção from pdf to txt. 
+The conversion from pdf to txt happens so that the would be able to read better and more efficiently the content of the file sent, thus returning the content to you.
 
 ~~~
 @app.post("/upload")
@@ -14,4 +13,4 @@ async def upload(file_path: UploadFile = File(...)):
     return {"file_name": file_path.filename}
 ~~~
 
-Há outras formas de criar este mesmo leitor de pdf usando bibliotecas ou não, mas para melhor compreensão do codigo construimos de uma forma mais simples, mas que atendesse ao que esperavamos.
+There are other ways to create this same pdf reader using libraries or not, but to better understand the code we built a simpler way, but that met what we expected.
