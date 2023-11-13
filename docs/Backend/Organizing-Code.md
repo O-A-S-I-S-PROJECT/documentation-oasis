@@ -1,16 +1,18 @@
-Organizamos em algumas etapas os codigos
+Organizamos o codigo em algumas 
 
 Separamos por pasta as versões
 
 [imagem aqui]
-[imagem aqui]
-[imagem aqui]
 
-explicação da versão 1:
-Quando se abre o nosso codigo ve se que que tem a pasta v1 a pasta v1 nada mais é do que 
+Quando aberto o código tem uma pasta chamada de version com outras versões dentro, cada versão significa o estado do codigo que são o começo, o meio e o atual do código.
 
-explicação da versão 1.2
+### Versão 1.1:
+A versão 1 é o começo da separação dos arquivos da ia e o ajuntamento da api. Isto foi feito para teste e foi deixado como exemplo de como começamos a testar, pois a forma que foi feita será usada nas próximas versões que serão a organização do codigo. 
 
-explicação da versão 1.2.1
+### Versão 1.2:
+A versão 1.2 foi separada em três arquivos a aplicação da api (application.py), o serviço da ia (service.py) e o teste que é a tentativa de conectar com o banco de dados da inteligencia artifical para fazer a manipulação dos documentos do diretorio source documents que pertence a ia.
+
+### Versão 1.2.1:
+Por ultimo a versão 1.2.1 marca o atual da organização do codigo do projeto
 
 
