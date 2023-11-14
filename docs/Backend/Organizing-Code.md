@@ -1,18 +1,13 @@
 # Organização do codigo e suas pastas adicionadas
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Organizamos o codigo em algumas 
+We organized the code in a few steps which consists mainly of the versions of the folders and the source_documents folder of the AI.
 
-Separamos por pasta as versões
+When opened the code has a folder called version with other versions inside, each version means the state of the code that are the beginning, middle and current of the code.
 
-[imagem aqui]
-
-Quando aberto o código tem uma pasta chamada de version com outras versões dentro, cada versão significa o estado do codigo que são o começo, o meio e o atual do código.
-
-### Versão 1.1:
-A versão 1 é o começo da separação dos arquivos da ia e o ajuntamento da api. Isto foi feito para teste e foi deixado como exemplo de como começamos a testar, pois a forma que foi feita será usada nas próximas versões que serão a organização do codigo. 
-
-### Versão 1.2:
-A versão 1.2 foi separada em três arquivos a aplicação da api (application.py), o serviço da ia (service.py) e o teste que é a tentativa de conectar com o banco de dados da inteligencia artifical para fazer a manipulação dos documentos do diretorio source documents que pertence a ia.
-
-### Versão 1.2.1:
-Por ultimo a versão 1.2.1 marca o atual da organização do codigo do projeto nela tem 4 arquivos principais que é a aplicação, a configuração do banco de dados, o modelo de configuração da api e o serviço da inteligência artificial (respectivamente application.py, database.py, models.py e services.py).
+<Tabs className="unique-tabs">
+  <TabItem value="v1">Version 1 is the beginning of separation of files from the AI and gathering of the API. This was done for testing and was left as an example of how we started to test, because the form that was made will be used in the next versions that will be the organization of the code. </TabItem>
+  <TabItem value="v1.2">Version 1.2 was separated into three files the application of the api (application.py), the AI service (service.py) and the test that is the attempt to connect with the artificial intelligence database to make the manipulation of the documents of the source directory Documents that belongs to the IA.</TabItem>
+  <TabItem value="v1.2.1">Last version 1.2.1 marks the current project code organization in it has 4 main files which is the application, database configuration, api configuration model and artificial intelligence service (respectively application.py, database.py, models.py and services.py).</TabItem>
+</Tabs>
