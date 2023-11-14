@@ -96,3 +96,91 @@ def add_itens_json(source_directory: str, itens_to_add: List):
         new_json.append({"doc_name": item, "last_update":datetime.now().strftime("%d/%m/%Y")})
     return new_json
 ~~~
+
+
+Mostra o status dos intens que precisam ser adicionados ou deletados dentro do source_directory e do chroma_store que estão listados dentro do banco de dados, já que o source_directory serve como um banco de dados do banco de dados.
+~~~
+def see_status_db(persist_directory: str ,CHROMA_SETTINGS: str, source_directory: str):
+    
+    db = load_db(persist_directory=persist_directory, CHROMA_SETTINGS=CHROMA_SETTINGS)
+    
+    infos = list_db_itens(db)
+    itens_names_db = infos["itens_names"]
+    itens_names_root = list_dir(source_directory=source_directory)
+    itens_to_delete = [item for item in itens_names_db if item not in itens_names_root]
+    itens_to_add = [item for item in itens_names_root if item not in itens_names_db]
+    itens_to_add.remove("docs_info.json")
+    itens_to_mutate = {
+        "itens_to_delete":itens_to_delete,
+        "itens_to_add":itens_to_add,
+        "collections_info":infos
+        }
+    db = None
+    return itens_to_mutate
+~~~
+
+
+Deleta os arquivos da raiz do banco de dados da pasta do source_directory
+~~~
+def delete_from_root(source_directory: str, documents_names: List[str]):
+    not_exist = []
+    for document_name in documents_names:
+        exists = os.path.isfile(source_directory + "\\" + document_name) and document_name != "docs_info.json"
+        if exists:
+            print(source_directory)
+            if source_directory[:source_directory.find("/")] == RECYCLE_BIN:
+                os.remove(source_directory + "\\" + document_name)
+            else:
+                if not os.path.isdir(RECYCLE_BIN):
+                    os.mkdir(RECYCLE_BIN)
+                if not os.path.isdir(RECYCLE_BIN + source_directory[source_directory.find("/"):]):
+                    os.mkdir(RECYCLE_BIN + source_directory[source_directory.find("/"):])
+                shutil.move(source_directory + "\\" + document_name, RECYCLE_BIN + source_directory[source_directory.find("/"):] + "\\" + document_name)
+        else:
+            not_exist.append(document_name)
+    return not_exist
+~~~
+
+
+Deleta os dados dos documentos dentro do chromaDb
+~~~
+def delete_from_db(persist_directory: str ,CHROMA_SETTINGS: str, documents_names: List[str]):
+    
+
+    db = load_db(persist_directory=persist_directory, CHROMA_SETTINGS=CHROMA_SETTINGS)
+
+    print(db._collection.count())
+    print("starting")
+    # print(db.get())   
+    for x in db.get():
+        print("X:" + x)
+        if x == 'embeddings':
+            continue
+        print(db.get()[x].__len__())
+    print(type(db.get()['metadatas']))
+    last_name = ""
+    ids_list = []
+    ids_to_delete = []
+    deleted_names = []
+    for document_name in documents_names:
+        name_to_delete = "source_documents/default\\" + document_name
+        for i in range(db.get()['metadatas'].__len__()):
+            if last_name != db.get()['metadatas'][i]['source']:
+                last_name = db.get()['metadatas'][i]['source']
+                print(i)
+                print(last_name)
+            if last_name == name_to_delete:
+                ids_list.append(i)
+                if not deleted_names.__contains__(last_name):
+                    deleted_names.append(last_name)
+    for i in ids_list:
+        ids_to_delete.append(db.get()['ids'][i])
+    print(ids_to_delete)
+    if(len(ids_to_delete) == 0):
+        return ["no items to delete"]
+    db.delete(ids=ids_to_delete)
+    db.persist()
+    
+    db = None
+    return deleted_names
+~~~
