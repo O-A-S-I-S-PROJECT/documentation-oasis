@@ -1,3 +1,5 @@
+# Organização do codigo e suas pastas adicionadas
+
 Organizamos o codigo em algumas 
 
 Separamos por pasta as versões
@@ -13,6 +15,4 @@ A versão 1 é o começo da separação dos arquivos da ia e o ajuntamento da ap
 A versão 1.2 foi separada em três arquivos a aplicação da api (application.py), o serviço da ia (service.py) e o teste que é a tentativa de conectar com o banco de dados da inteligencia artifical para fazer a manipulação dos documentos do diretorio source documents que pertence a ia.
 
 ### Versão 1.2.1:
-Por ultimo a versão 1.2.1 marca o atual da organização do codigo do projeto
-
-
+Por ultimo a versão 1.2.1 marca o atual da organização do codigo do projeto nela tem 4 arquivos principais que é a aplicação, a configuração do banco de dados, o modelo de configuração da api e o serviço da inteligência artificial (respectivamente application.py, database.py, models.py e services.py).
