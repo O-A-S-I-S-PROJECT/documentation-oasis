@@ -100,7 +100,7 @@ def add_itens_json(source_directory: str, itens_to_add: List):
 ~~~
 
 
-Mostra o status dos intens que precisam ser adicionados ou deletados dentro do source_directory e do chroma_store que estão listados dentro do banco de dados, já que o source_directory serve como um banco de dados do banco de dados.
+Shows the status of the intens that need to be added or deleted within the source_directory and chroma_store that are listed within the database, as the source_directory serves as a database.
 ~~~
 def see_status_db(persist_directory: str ,CHROMA_SETTINGS: str, source_directory: str):
     
@@ -122,7 +122,7 @@ def see_status_db(persist_directory: str ,CHROMA_SETTINGS: str, source_directory
 ~~~
 
 
-Deleta os arquivos da raiz do banco de dados da pasta do source_directory
+Deletes the database root files from the source_directory folder
 ~~~
 def delete_from_root(source_directory: str, documents_names: List[str]):
     not_exist = []
@@ -144,7 +144,7 @@ def delete_from_root(source_directory: str, documents_names: List[str]):
 ~~~
 
 
-Deleta os dados dos documentos dentro do chromaDb
+Delete data from documents within chromaDb
 ~~~
 def delete_from_db(persist_directory: str ,CHROMA_SETTINGS: str, documents_names: List[str]):
     

@@ -2,8 +2,32 @@
 
 
 # Configuration of SQLServer/ MySQL database
-Create a models.py file and inside it instantiate the tables and what you want to put in them
+To be able to follow the next steps you must instantiate this configuration of access to the sqlServer database, MySQL or any other relational database.
+For database verification and api connection with it we use the SqlAlchemy library and PyMySql.
 
+~~~
+from asyncio import base_events
+from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:9867..vi@127.0.0.1:3306/teste"
+
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL,
+    #connect_args={"check_same_thread": False}
+)
+
+
+SessionLocal = sessionmaker(autocommit=False,
+                            bind=engine)
+
+Base = declarative_base()
+~~~
+
+
+Create a models.py file and inside it instantiate the tables and what you want to put in them
 ~~~
 #--- Table configuration ---
 
@@ -49,6 +73,7 @@ def get_db():
 
 <br />
 
+No application.py é onde a aplicação da API funciona, portanto deve se fazer as importações do models.py para que o swagger rode corretamente e de fato a aplicação funcionar nessa fase.
 ~~~
 #--- Returns the data you have inside the database ---
 import datetime
@@ -66,7 +91,7 @@ from sqlalchemy import Column, Integer, String, Boolean, VARCHAR
 from database import Base, engine, SessionLocal
 import database
 
-
+#Esse trecho pode ser colocado dentro do models, mas recomendo que coloque aqui para melhor rodagem do código.
 Base.metadata.create_all(bind=engine)
 
 @app.get("/user", response_model=List[UserSchema])
@@ -77,7 +102,7 @@ async def index(db:Session=Depends(get_db)):
 ~~~
 #--- create a table ---
 
-@app.get("/userc")
+@app.get("/user")
 async def criarUsuario(db:Session=Depends(get_db)):
     u = User(email="", name="", password="", is_active = False, id = "")
     db.add(u)
