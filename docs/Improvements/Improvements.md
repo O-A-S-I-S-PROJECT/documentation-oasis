@@ -9,3 +9,5 @@ So here are some suggestions for improvements for this product made for the comp
     - Application with Docker would improve many things and avoid many errors;
 - use the gpu for better processing of information and data;
 - Invest in a company’s own server(computer) for the demand of users who would use the system;
+- Be added voice recognition to ask questions
+- Adding other languages and training their responses
