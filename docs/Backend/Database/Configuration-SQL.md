@@ -12,7 +12,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:9867..vi@127.0.0.1:3306/teste"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://username:yourpassword@yourIp:yourDoor/yourNameFile"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
@@ -73,7 +73,7 @@ def get_db():
 
 <br />
 
-No application.py é onde a aplicação da API funciona, portanto deve se fazer as importações do models.py para que o swagger rode corretamente e de fato a aplicação funcionar nessa fase.
+In application.py is where the API application works, so you must make the imports of models.py for Swagger to run correctly and in fact the application works at this stage.
 ~~~
 #--- Returns the data you have inside the database ---
 import datetime
@@ -91,7 +91,7 @@ from sqlalchemy import Column, Integer, String, Boolean, VARCHAR
 from database import Base, engine, SessionLocal
 import database
 
-#Esse trecho pode ser colocado dentro do models, mas recomendo que coloque aqui para melhor rodagem do código.
+#This section can be placed inside the models, but I recommend that you put it here for better code execution.
 Base.metadata.create_all(bind=engine)
 
 @app.get("/user", response_model=List[UserSchema])
