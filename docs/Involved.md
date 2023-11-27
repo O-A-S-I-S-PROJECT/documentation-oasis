@@ -24,7 +24,3 @@ Key Contributions: Creator of project design, construction of web development co
 Function: Pio of design
 Responsibilities: Analyze project development and guidance with the team.
 Key Contribution: Creator of the project.
-
-6. 
-Função: Direcionador da AI
-Contribuição: Orientou e direcionou de como começar a inteligencia artificial.
