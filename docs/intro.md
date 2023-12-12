@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Summary Changes 
+# Summary Changes
 
 The **OASIS** project had as its starting point the privateGPT code, which underwent significant modifications to build the desired AI. These modifications involved creating a highly specialized PDF reader and converter tailored to our needs, as well as developing EndPoints using the code base, integrating it with the database and PDF reading system.
 
